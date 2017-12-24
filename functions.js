@@ -1,13 +1,20 @@
-// makeTurkeySandwich
-//     Get one slice of bread.
-//     Add turkey.
-//     Put a slice of bread on top.
+var todos = ['item 1', 'item 2', 'item 3'];
 
-function makeTurkeySandwich() {
-    Get one slice of bread;
-    Add turkey;
-    Put a slice of bread on top;
+function displayTodos() {
+    console.log("My todos:", todos);
 }
 
-// To run function add () at the end of function
-makeTurkeySandwich()
+function addTodos(todo) {
+    todos.push(todo);
+    displayTodos();
+}
+
+function changeTodo(pos, val) {
+    todos[pos] = val;
+    displayTodos();
+}
+
+function deleteTodo(pos) {
+    todos.splice(pos, 1);
+    displayTodos();
+}
