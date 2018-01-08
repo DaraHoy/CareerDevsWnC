@@ -59,9 +59,12 @@ var todoList = {
     }
 };
 
-todoList.displayTodos();
-todoList.addTodo('first')
-todoList.addTodo('second')
-todoList.addTodo('third')
-todoList.toggleAll()
-todoList.toggleAll()
+var displayTodosButton = document.getElementById('displayTodosButton');
+var toggleAllButton = document.getElementById('toggleAllButton');
+
+displayTodosButton.addEventListener('click', function() {
+    todoList.displayTodos();
+});
+toggleAllButton.addEventListener('click', function() {
+    todoList.toggleAll();
+})
