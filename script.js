@@ -1,7 +1,21 @@
 var todoList = {
     todos: [],
     displayTodos: function() {
-        console.log('My Todos:', this.todos);
+        if (this.todos.length === 0) {
+            console.log("Your todo list is empty");
+        }
+        else {
+            console.log('My todos:');
+            for (var i = 0; i < this.todos.length; i++) {
+                if (this.todos[i].completed === true) {
+                    console.log('(x)', this.todos[i].todoText);
+                }
+                else {
+                    console.log('( )', this.todos[i].todoText);
+                }
+            }
+        }
+
     },
     addTodo: function(todoText) {
         this.todos.push({
@@ -25,6 +39,8 @@ var todoList = {
     }
 };
 
-console.log(todoList.addTodo('this is an object'))
-console.log(todoList.changeTodo(0, 'changed'))
-console.log(todoList.toggleCompleted(0))
+todoList.displayTodos();
+todoList.addTodo('first')
+todoList.addTodo('second')
+todoList.addTodo('third')
+todoList.toggleCompleted(1)
